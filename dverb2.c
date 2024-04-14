@@ -515,7 +515,7 @@ L8300:
     }
     curxt_1.xstrng = 815;
 /* 						!MIRROR BLOCKS. */
-    if (ldir > 180 && ! findex_1.mr1f || ldir < 180 && ! findex_1.mr2f) {
+    if ( ( ldir > 180 && ! findex_1.mr1f ) || ( ldir < 180 && ! findex_1.mr2f ) ) {
 	curxt_1.xstrng = 816;
     }
     return ret_val;
@@ -550,12 +550,10 @@ L10000:
 /* 						!ASSUME CANT. */
     ldir = (prsvec_1.prso - xsrch_1.xnorth) / xsrch_1.xnorth * 45;
 /* 						!XLATE DIR TO DEGREES. */
-    if (! findex_1.mropnf || (findex_1.mdir + 270) % 360 != ldir && 
-	    prsvec_1.prso != xsrch_1.xexit) {
+    if (! findex_1.mropnf || ( (findex_1.mdir + 270) % 360 != ldir && prsvec_1.prso != xsrch_1.xexit ) ) {
 	goto L10200;
     }
-    curxt_1.xroom1 = (findex_1.mloc - rindex_1.mra << 1) + rindex_1.mrae + 1 
-	    - findex_1.mdir / 180;
+    curxt_1.xroom1 = (findex_1.mloc - rindex_1.mra << 1) + rindex_1.mrae + 1 - findex_1.mdir / 180;
 /* 						!ASSUME E-W EXIT. */
     if (findex_1.mdir % 180 == 0) {
 	goto L10100;
@@ -572,8 +570,7 @@ L10100:
     return ret_val;
 
 L10200:
-    if (! findex_1.wdopnf || (findex_1.mdir + 180) % 360 != ldir && 
-	    prsvec_1.prso != xsrch_1.xexit) {
+    if (! findex_1.wdopnf || ((findex_1.mdir + 180) % 360 != ldir && prsvec_1.prso != xsrch_1.xexit) ) {
 	return ret_val;
     }
     curxt_1.xroom1 = findex_1.mloc + 1;

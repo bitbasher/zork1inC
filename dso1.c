@@ -27,8 +27,7 @@ integer rm;
 		play_1.winner - 1]) {
 	    goto L500;
 	}
-	if (! (full) && (findex_1.superf || findex_1.brieff && (
-		rooms_1.rflag[play_1.here - 1] & RSEEN) != 0)) {
+	if (! (full) && (findex_1.superf || ( findex_1.brieff && ( rooms_1.rflag[play_1.here - 1] & RSEEN ) != 0 ) ) ) {
 	    goto L200;
 	}
 
@@ -66,9 +65,7 @@ L500:
 	    i__2 = oactor_(i);
 	    invent_(i__2);
 	}
-	if ((objcts_1.oflag1[i - 1] & TRANBT) == 0 && (
-		objcts_1.oflag2[i - 1] & OPENBT) == 0 || qempty_(i))
-		 {
+	if ( ( ( objcts_1.oflag1[i - 1] & TRANBT) == 0 && (objcts_1.oflag2[i - 1] & OPENBT ) == 0 ) || qempty_(i)) {
 	    goto L1000;
 	}
 
@@ -139,10 +136,9 @@ L25:
     i__1 = objcts_1.olnt;
     for (j = 1; j <= i__1; ++j) {
 /* 						!LOOP. */
-	if (objcts_1.oadv[j - 1] != adv || (objcts_1.oflag1[j - 1] & 
-		VISIBT) == 0 || (objcts_1.oflag1[j - 1] & 
-		TRANBT) == 0 && (objcts_1.oflag2[j - 1] & 
-		OPENBT) == 0) {
+	if (objcts_1.oadv[j - 1] != adv ||
+		(objcts_1.oflag1[j - 1] & VISIBT) == 0 ||
+		( (objcts_1.oflag1[j - 1] & TRANBT) == 0 && (objcts_1.oflag2[j - 1] & OPENBT) == 0 ) ) {
 	    goto L100;
 	}
 	if (! qempty_(j)) {

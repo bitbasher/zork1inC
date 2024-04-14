@@ -6,29 +6,19 @@
 
 #include <stdio.h>
 
-#ifdef __AMOS__
-#include <amos.h>
-#endif
-
 #include "funcs.h"
 #include "vars.h"
 
 /* This is here to avoid depending on the existence of <stdlib.h> */
 
-extern void srand P((unsigned int));
+// extern void srand P((unsigned int));
 
 FILE *dbfile;
 
 #ifndef TEXTFILE
-#ifdef __AMOS__
 #define TEXTFILE "lib:dtextc.dat"
-#else /* ! __AMOS__ */
-#ifdef unix
-#define TEXTFILE "/usr/games/lib/dunlib/dtextc.dat"
-#else /* ! unix */
+#else
  I need a definition for TEXTFILE
-#endif /* ! unix */
-#endif /* ! __AMOS__ */
 #endif /* ! TEXTFILE */
 
 #ifndef LOCALTEXTFILE

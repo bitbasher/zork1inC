@@ -1,13 +1,17 @@
 # Makefile for dungeon
 
+BASEDIR := /Volumes/user/games/
+LOCALDIR := /usr/local
+GAMEFOLDER := zork1C
+
 # Where to install the program
-BINDIR = /usr/games
+BINDIR = $BASEDIR/$GAMEFOLDER
 
 # Where to install the data file
-DATADIR = /usr/games/lib
+DATADIR = $BASEDIR/$GAMEFOLDER/lib
 
 # Where to install the man page
-MANDIR = /usr/share/man
+MANDIR = $LOCALDIR/share/man
 
 # The dungeon program provides a ``more'' facility which tries to
 # figure out how many rows the terminal has.  Several mechanisms are
